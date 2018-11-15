@@ -1,3 +1,11 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [CategoriesReport.cs](./CS/CustomTableOfContents/CategoriesReport.cs) (VB: [CategoriesReport.vb](./VB/CustomTableOfContents/CategoriesReport.vb))
+* **[Form1.cs](./CS/CustomTableOfContents/Form1.cs) (VB: [Form1.vb](./VB/CustomTableOfContents/Form1.vb))**
+* [ProductsReport.cs](./CS/CustomTableOfContents/ProductsReport.cs) (VB: [ProductsReport.vb](./VB/CustomTableOfContents/ProductsReport.vb))
+* [TargetBrick.cs](./CS/CustomTableOfContents/TargetBrick.cs) (VB: [TargetBrick.vb](./VB/CustomTableOfContents/TargetBrick.vb))
+<!-- default file list end -->
 # How to create a custom Table Of Contents for merged reports with page indexes
 
 
