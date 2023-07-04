@@ -12,7 +12,7 @@ Namespace CustomTableOfContents
 			InitializeComponent()
 		End Sub
 
-		Private Sub tcCategoryName_BeforePrint(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintEventArgs) Handles tcCategoryName.BeforePrint
+		Private Sub tcCategoryName_BeforePrint(ByVal sender As Object, ByVal e As CancelEventArgs) Handles tcCategoryName.BeforePrint
 			Dim label As XRControl = TryCast(sender, XRControl)
 			label.Tag = String.Format("Target_{0}", GetCurrentColumnValue("CategoryID"))
 		End Sub

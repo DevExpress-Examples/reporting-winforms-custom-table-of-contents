@@ -10,12 +10,12 @@ namespace CustomTableOfContents {
             InitializeComponent();
         }
 
-        private void lbCategoryName_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e) {
+        private void lbCategoryName_BeforePrint(object sender, CancelEventArgs e) {
             XRControl label = sender as XRControl;
             label.Tag = String.Format("Link_{0}", GetCurrentColumnValue("CategoryID"));
         }
 
-        private void lbPage_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e) {
+        private void lbPage_BeforePrint(object sender, CancelEventArgs e) {
             XRControl label = sender as XRControl;
             label.Tag = String.Format("PageBrick_{0}", GetCurrentColumnValue("CategoryID"));
         }

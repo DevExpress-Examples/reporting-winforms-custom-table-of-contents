@@ -30,8 +30,8 @@
 			Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
 			Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
 			Me.ReportHeader = New DevExpress.XtraReports.UI.ReportHeaderBand()
-			Me.nwindDataSet1 = New CustomTableOfContents.nwindDataSet()
-			Me.categoriesTableAdapter = New CustomTableOfContents.nwindDataSetTableAdapters.CategoriesTableAdapter()
+			Me.nwindDataSet1 = New nwindDataSet()
+			Me.categoriesTableAdapter = New nwindDataSetTableAdapters.CategoriesTableAdapter()
 			Me.lbPage = New DevExpress.XtraReports.UI.XRLabel()
 			DirectCast(Me.nwindDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
 			DirectCast(Me, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,7 +47,7 @@
 			' lbCategoryName
 			' 
 			Me.lbCategoryName.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() { New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Categories.CategoryName")})
-			Me.lbCategoryName.Font = New System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold)
+			Me.lbCategoryName.Font = New DevExpress.Drawing.DXFont("Times New Roman", 16F, DevExpress.Drawing.DXFontStyle.Bold)
 			Me.lbCategoryName.LocationFloat = New DevExpress.Utils.PointFloat(110.625F, 10.00001F)
 			Me.lbCategoryName.Name = "lbCategoryName"
 			Me.lbCategoryName.NavigateUrl = "lbHeader"
@@ -68,7 +68,7 @@
 			' 
 			' lbHeader
 			' 
-			Me.lbHeader.Font = New System.Drawing.Font("Times New Roman", 36F)
+			Me.lbHeader.Font = New DevExpress.Drawing.DXFont("Times New Roman", 36F)
 			Me.lbHeader.LocationFloat = New DevExpress.Utils.PointFloat(0F, 10.00001F)
 			Me.lbHeader.Name = "lbHeader"
 			Me.lbHeader.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F)
@@ -110,7 +110,7 @@
 			' 
 			' lbPage
 			' 
-			Me.lbPage.Font = New System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (CByte(0)))
+			Me.lbPage.Font = New DevExpress.Drawing.DXFont("Times New Roman", 20.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", (CByte(0)))})
 			Me.lbPage.LocationFloat = New DevExpress.Utils.PointFloat(583.75F, 10.00001F)
 			Me.lbPage.Name = "lbPage"
 			Me.lbPage.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F)

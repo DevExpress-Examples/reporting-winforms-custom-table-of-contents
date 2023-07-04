@@ -12,12 +12,12 @@ Namespace CustomTableOfContents
 			InitializeComponent()
 		End Sub
 
-		Private Sub lbCategoryName_BeforePrint(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintEventArgs) Handles lbCategoryName.BeforePrint
+		Private Sub lbCategoryName_BeforePrint(ByVal sender As Object, ByVal e As CancelEventArgs) Handles lbCategoryName.BeforePrint
 			Dim label As XRControl = TryCast(sender, XRControl)
 			label.Tag = String.Format("Link_{0}", GetCurrentColumnValue("CategoryID"))
 		End Sub
 
-		Private Sub lbPage_BeforePrint(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintEventArgs) Handles lbPage.BeforePrint
+		Private Sub lbPage_BeforePrint(ByVal sender As Object, ByVal e As CancelEventArgs) Handles lbPage.BeforePrint
 			Dim label As XRControl = TryCast(sender, XRControl)
 			label.Tag = String.Format("PageBrick_{0}", GetCurrentColumnValue("CategoryID"))
 		End Sub

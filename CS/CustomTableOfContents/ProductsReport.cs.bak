@@ -10,7 +10,7 @@ namespace CustomTableOfContents {
             InitializeComponent();
         }
 
-        private void tcCategoryName_BeforePrint(object sender, CancelEventArgs e) {
+        private void tcCategoryName_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e) {
             XRControl label = sender as XRControl;
             label.Tag = String.Format("Target_{0}", GetCurrentColumnValue("CategoryID"));
         }

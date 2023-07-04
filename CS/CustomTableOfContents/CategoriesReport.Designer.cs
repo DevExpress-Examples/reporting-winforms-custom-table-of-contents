@@ -49,7 +49,7 @@
             // 
             this.lbCategoryName.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding("Text", null, "Categories.CategoryName")});
-            this.lbCategoryName.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold);
+            this.lbCategoryName.Font = new DevExpress.Drawing.DXFont("Times New Roman", 16F, DevExpress.Drawing.DXFontStyle.Bold);
             this.lbCategoryName.LocationFloat = new DevExpress.Utils.PointFloat(110.625F, 10.00001F);
             this.lbCategoryName.Name = "lbCategoryName";
             this.lbCategoryName.NavigateUrl = "lbHeader";
@@ -59,7 +59,7 @@
             this.lbCategoryName.StylePriority.UseTextAlignment = false;
             this.lbCategoryName.Target = "_self";
             this.lbCategoryName.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.lbCategoryName.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.lbCategoryName_BeforePrint);
+            this.lbCategoryName.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.lbCategoryName_BeforePrint);
             // 
             // TopMargin
             // 
@@ -70,7 +70,7 @@
             // 
             // lbHeader
             // 
-            this.lbHeader.Font = new System.Drawing.Font("Times New Roman", 36F);
+            this.lbHeader.Font = new DevExpress.Drawing.DXFont("Times New Roman", 36F);
             this.lbHeader.LocationFloat = new DevExpress.Utils.PointFloat(0F, 10.00001F);
             this.lbHeader.Name = "lbHeader";
             this.lbHeader.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -116,7 +116,7 @@
             // 
             // lbPage
             // 
-            this.lbPage.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPage.Font = new DevExpress.Drawing.DXFont("Times New Roman", 20.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lbPage.LocationFloat = new DevExpress.Utils.PointFloat(583.75F, 10.00001F);
             this.lbPage.Name = "lbPage";
             this.lbPage.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -125,7 +125,7 @@
             this.lbPage.StylePriority.UseTextAlignment = false;
             this.lbPage.Text = "lbPage";
             this.lbPage.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.lbPage.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.lbPage_BeforePrint);
+            this.lbPage.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.lbPage_BeforePrint);
             // 
             // CategoriesReport
             // 

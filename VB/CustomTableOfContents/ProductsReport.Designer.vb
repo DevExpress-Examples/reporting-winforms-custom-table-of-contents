@@ -44,8 +44,8 @@
 			Me.tbProductData = New DevExpress.XtraReports.UI.XRTable()
 			Me.GroupHeaderTitle = New DevExpress.XtraReports.UI.GroupHeaderBand()
 			Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
-			Me.nwindDataSet1 = New CustomTableOfContents.nwindDataSet()
-			Me.productsTableAdapter = New CustomTableOfContents.nwindDataSetTableAdapters.ProductsTableAdapter()
+			Me.nwindDataSet1 = New nwindDataSet()
+			Me.productsTableAdapter = New nwindDataSetTableAdapters.ProductsTableAdapter()
 			DirectCast(Me.tbProductHeader, System.ComponentModel.ISupportInitialize).BeginInit()
 			DirectCast(Me.tbProductData, System.ComponentModel.ISupportInitialize).BeginInit()
 			DirectCast(Me.nwindDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -128,7 +128,7 @@
 			' tcCategoryName
 			' 
             Me.tcCategoryName.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Products.CategoryName"), New DevExpress.XtraReports.UI.XRBinding("Bookmark", Nothing, "Categories.CategoryName")})
-            Me.tcCategoryName.Font = New System.Drawing.Font("Times New Roman", 16.0F, System.Drawing.FontStyle.Bold)
+            Me.tcCategoryName.Font = New DevExpress.Drawing.DXFont("Times New Roman", 16.0F, DevExpress.Drawing.DXFontStyle.Bold)
             Me.tcCategoryName.Name = "tcCategoryName"
 			Me.tcCategoryName.StylePriority.UseFont = False
 			Me.tcCategoryName.StylePriority.UseTextAlignment = False
@@ -199,7 +199,7 @@
 			' 
 			Me.GroupHeaderTitle.Borders = (CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) Or DevExpress.XtraPrinting.BorderSide.Right) Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide))
 			Me.GroupHeaderTitle.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() { Me.tbProductHeader})
-			Me.GroupHeaderTitle.Font = New System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold)
+			Me.GroupHeaderTitle.Font = New DevExpress.Drawing.DXFont("Times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold)
 			Me.GroupHeaderTitle.GroupFields.AddRange(New DevExpress.XtraReports.UI.GroupField() { New DevExpress.XtraReports.UI.GroupField("CategoryID", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)})
 			Me.GroupHeaderTitle.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage
 			Me.GroupHeaderTitle.HeightF = 65F

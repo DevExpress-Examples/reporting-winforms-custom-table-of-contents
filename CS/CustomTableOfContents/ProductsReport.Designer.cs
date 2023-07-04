@@ -137,13 +137,13 @@
             this.tcCategoryName.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding("Text", null, "Products.CategoryName"),
             new DevExpress.XtraReports.UI.XRBinding("Bookmark", null, "Categories.CategoryName")});
-            this.tcCategoryName.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold);
+            this.tcCategoryName.Font = new DevExpress.Drawing.DXFont("Times New Roman", 16F, DevExpress.Drawing.DXFontStyle.Bold);
             this.tcCategoryName.Name = "tcCategoryName";
             this.tcCategoryName.StylePriority.UseFont = false;
             this.tcCategoryName.StylePriority.UseTextAlignment = false;
             this.tcCategoryName.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tcCategoryName.Weight = 3D;
-            this.tcCategoryName.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.tcCategoryName_BeforePrint);
+            this.tcCategoryName.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.tcCategoryName_BeforePrint);
             // 
             // trProductHeader
             // 
@@ -226,7 +226,7 @@
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.GroupHeaderTitle.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.tbProductHeader});
-            this.GroupHeaderTitle.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
+            this.GroupHeaderTitle.Font = new DevExpress.Drawing.DXFont("Times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.GroupHeaderTitle.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
             new DevExpress.XtraReports.UI.GroupField("CategoryID", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
             this.GroupHeaderTitle.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
