@@ -28,4 +28,4 @@ The table of contents needs links between the [bricks](https://docs.devexpress.c
 
 ## More Examples
 
-- [How to customize a Document Map at runtime](https://github.com/DevExpress-Examples/Reporting_how-to-customize-a-document-map-at-runtime)
+- [How to customize a Document Map at runtime](https://github.com/DevExpress-Examples/Reporting_how-to-customize-a-document-map-at-runtime-e783)
