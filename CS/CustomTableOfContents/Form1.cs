@@ -41,18 +41,18 @@ namespace CustomTableOfContents {
 
             foreach (Page page in report.Pages) {
                 foreach (VisualBrick brick in BrickSelector.GetBricks(page)) {
-                    if (brick.Value != null) {
-                        string valueString = brick.Value.ToString();
+                    if (brick.Tag != null) {
+                        string tagString = brick.Tag.ToString();
 
-                        if (valueString.StartsWith("Link_")) {
+                        if (tagString.StartsWith("Link_")) {
                             linkBricks.Add(brick);
                         }
 
-                        if (valueString.StartsWith("Target_")) {
+                        if (tagString.StartsWith("Target_")) {
                             targetBricks.Add(new TargetBrick() { Brick = brick, Page = page });
                         }
 
-                        if (valueString.StartsWith("PageBrick_")) {
+                        if (tagString.StartsWith("PageBrick_")) {
                             pageBricks.Add(brick);
                         }
                     }
@@ -60,13 +60,13 @@ namespace CustomTableOfContents {
             }
 
             foreach (VisualBrick link in linkBricks) {
-                string key = link.Value.ToString().Substring(5);
-                TargetBrick target = targetBricks.Find(targetBrick => (string)targetBrick.Brick.Value == String.Concat("Target_", key));
+                string key = link.Tag.ToString().Substring(5);
+                TargetBrick target = targetBricks.Find(targetBrick => (string)targetBrick.Brick.Tag == String.Concat("Target_", key));
                 if (target != null) {
                     target.Brick.AnchorName = key;
                     link.Url = key;
                     link.NavigationPair = BrickPagePair.Create(target.Brick, target.Page);
-                    VisualBrick pageBrick = pageBricks.Find(brick => (string)brick.Value == String.Concat("PageBrick_", key));
+                    VisualBrick pageBrick = pageBricks.Find(brick => (string)brick.Tag == String.Concat("PageBrick_", key));
                     if (pageBrick != null)
                         pageBrick.Text = (target.Page.Index + 1).ToString();
                 }
