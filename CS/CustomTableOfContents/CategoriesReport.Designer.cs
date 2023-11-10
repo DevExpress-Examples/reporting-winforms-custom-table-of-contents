@@ -29,17 +29,17 @@
             this.lbHeader = new DevExpress.XtraReports.UI.XRLabel();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.lbPage = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
             this.nwindDataSet1 = new CustomTableOfContents.nwindDataSet();
             this.categoriesTableAdapter = new CustomTableOfContents.nwindDataSetTableAdapters.CategoriesTableAdapter();
-            this.lbPage = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.nwindDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // pbPicture
             // 
-            this.pbPicture.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Image", null, "Categories.Picture")});
+            this.pbPicture.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "ImageSource", "[Picture]")});
             this.pbPicture.LocationFloat = new DevExpress.Utils.PointFloat(0F, 10F);
             this.pbPicture.Name = "pbPicture";
             this.pbPicture.SizeF = new System.Drawing.SizeF(100F, 50F);
@@ -47,8 +47,8 @@
             // 
             // lbCategoryName
             // 
-            this.lbCategoryName.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Categories.CategoryName")});
+            this.lbCategoryName.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CategoryName]")});
             this.lbCategoryName.Font = new DevExpress.Drawing.DXFont("Times New Roman", 16F, DevExpress.Drawing.DXFontStyle.Bold);
             this.lbCategoryName.LocationFloat = new DevExpress.Utils.PointFloat(110.625F, 10.00001F);
             this.lbCategoryName.Name = "lbCategoryName";
@@ -63,7 +63,6 @@
             // 
             // TopMargin
             // 
-            this.TopMargin.HeightF = 100F;
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -82,7 +81,6 @@
             // 
             // BottomMargin
             // 
-            this.BottomMargin.HeightF = 100F;
             this.BottomMargin.Name = "BottomMargin";
             this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -97,6 +95,20 @@
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // lbPage
+            // 
+            this.lbPage.Font = new DevExpress.Drawing.DXFont("Times New Roman", 20.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.lbPage.LocationFloat = new DevExpress.Utils.PointFloat(583.75F, 10.00001F);
+            this.lbPage.Name = "lbPage";
+            this.lbPage.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbPage.SizeF = new System.Drawing.SizeF(56.25F, 50F);
+            this.lbPage.StylePriority.UseFont = false;
+            this.lbPage.StylePriority.UseTextAlignment = false;
+            this.lbPage.Text = "lbPage";
+            this.lbPage.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.lbPage.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.lbPage_BeforePrint);
             // 
             // ReportHeader
             // 
@@ -114,19 +126,6 @@
             // 
             this.categoriesTableAdapter.ClearBeforeFill = true;
             // 
-            // lbPage
-            // 
-            this.lbPage.Font = new DevExpress.Drawing.DXFont("Times New Roman", 20.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
-            this.lbPage.LocationFloat = new DevExpress.Utils.PointFloat(583.75F, 10.00001F);
-            this.lbPage.Name = "lbPage";
-            this.lbPage.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.lbPage.SizeF = new System.Drawing.SizeF(56.25F, 50F);
-            this.lbPage.StylePriority.UseFont = false;
-            this.lbPage.StylePriority.UseTextAlignment = false;
-            this.lbPage.Text = "lbPage";
-            this.lbPage.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.lbPage.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.lbPage_BeforePrint);
-            // 
             // CategoriesReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -137,7 +136,7 @@
             this.DataAdapter = this.categoriesTableAdapter;
             this.DataMember = "Categories";
             this.DataSource = this.nwindDataSet1;
-            this.Version = "15.2";
+            this.Version = "23.1";
             ((System.ComponentModel.ISupportInitialize)(this.nwindDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

@@ -53,8 +53,8 @@
             // 
             // tcUnitsOnOrder
             // 
-            this.tcUnitsOnOrder.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Products.UnitsOnOrder")});
+            this.tcUnitsOnOrder.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[UnitsOnOrder]")});
             this.tcUnitsOnOrder.Name = "tcUnitsOnOrder";
             this.tcUnitsOnOrder.StylePriority.UseTextAlignment = false;
             this.tcUnitsOnOrder.Text = "tcUnitsOnOrder";
@@ -75,8 +75,8 @@
             // 
             // tcProductName
             // 
-            this.tcProductName.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Products.ProductName")});
+            this.tcProductName.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[ProductName]")});
             this.tcProductName.Name = "tcProductName";
             this.tcProductName.StylePriority.UseTextAlignment = false;
             this.tcProductName.Text = "tcProductName";
@@ -87,23 +87,23 @@
             // 
             this.tcDiscontHeader.Name = "tcDiscontHeader";
             this.tcDiscontHeader.Text = "Discont.";
-            this.tcDiscontHeader.Weight = 0.23846170170351017D;
+            this.tcDiscontHeader.Weight = 0.23846170170351016D;
             // 
             // cbDiscont
             // 
-            this.cbDiscont.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.cbDiscont.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("CheckState", null, "Products.Discontinued")});
-            this.cbDiscont.GlyphAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cbDiscont.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.cbDiscont.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "CheckBoxState", "[Discontinued]")});
+            this.cbDiscont.GlyphOptions.Alignment = DevExpress.Utils.HorzAlignment.Center;
             this.cbDiscont.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.cbDiscont.Name = "cbDiscont";
-            this.cbDiscont.SizeF = new System.Drawing.SizeF(51.66656F, 25F);
+            this.cbDiscont.SizeF = new System.Drawing.SizeF(50.62496F, 23.95833F);
             this.cbDiscont.StylePriority.UseBorders = false;
             // 
             // tcUnitsInStock
             // 
-            this.tcUnitsInStock.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Products.UnitsInStock")});
+            this.tcUnitsInStock.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[UnitsInStock]")});
             this.tcUnitsInStock.Name = "tcUnitsInStock";
             this.tcUnitsInStock.StylePriority.UseTextAlignment = false;
             this.tcUnitsInStock.Text = "tcUnitsInStock";
@@ -134,9 +134,9 @@
             // 
             // tcCategoryName
             // 
-            this.tcCategoryName.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Products.CategoryName"),
-            new DevExpress.XtraReports.UI.XRBinding("Bookmark", null, "Categories.CategoryName")});
+            this.tcCategoryName.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CategoryName]"),
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Bookmark", "[Categories.CategoryName]")});
             this.tcCategoryName.Font = new DevExpress.Drawing.DXFont("Times New Roman", 16F, DevExpress.Drawing.DXFontStyle.Bold);
             this.tcCategoryName.Name = "tcCategoryName";
             this.tcCategoryName.StylePriority.UseFont = false;
@@ -175,12 +175,13 @@
             // 
             // tcUnitPrice
             // 
-            this.tcUnitPrice.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Products.UnitPrice", "{0:c}")});
+            this.tcUnitPrice.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[UnitPrice]")});
             this.tcUnitPrice.Name = "tcUnitPrice";
             this.tcUnitPrice.StylePriority.UseTextAlignment = false;
             this.tcUnitPrice.Text = "tcUnitPrice";
             this.tcUnitPrice.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.tcUnitPrice.TextFormatString = "{0:c}";
             this.tcUnitPrice.Weight = 0.4663461624235804D;
             // 
             // tcDiscont
@@ -263,7 +264,7 @@
             this.DataAdapter = this.productsTableAdapter;
             this.DataMember = "Products";
             this.DataSource = this.nwindDataSet1;
-            this.Version = "13.2";
+            this.Version = "23.1";
             ((System.ComponentModel.ISupportInitialize)(this.tbProductHeader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbProductData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nwindDataSet1)).EndInit();
