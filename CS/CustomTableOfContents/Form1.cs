@@ -37,11 +37,11 @@ namespace CustomTableOfContents {
             List<VisualBrick> pageBricks = new List<VisualBrick>();
             List<TargetBrick> targetBricks = new List<TargetBrick>();
 
+
+
             foreach (Page page in report.Pages) {
-                NestedBrickIterator iterator = new NestedBrickIterator(page.InnerBricks);
-                while (iterator.MoveNext()) {
-                    VisualBrick brick = iterator.CurrentBrick as VisualBrick;
-                    if (brick != null && brick.Value != null) {
+                foreach (VisualBrick brick in BrickSelector.GetBricks(page)) {
+                    if (brick.Value != null) {
                         string valueString = brick.Value.ToString();
 
                         if (valueString.StartsWith("Link_")) {
@@ -52,14 +52,14 @@ namespace CustomTableOfContents {
                             targetBricks.Add(new TargetBrick() { Brick = brick, Page = page });
                         }
 
-                        if(valueString.StartsWith("PageBrick_")) {
+                        if (valueString.StartsWith("PageBrick_")) {
                             pageBricks.Add(brick);
                         }
                     }
                 }
             }
 
-            foreach(VisualBrick link in linkBricks) {
+            foreach (VisualBrick link in linkBricks) {
                 string key = link.Value.ToString().Substring(5);
                 TargetBrick target = targetBricks.Find(targetBrick => (string)targetBrick.Brick.Value == String.Concat("Target_", key));
                 if (target != null) {
@@ -67,7 +67,7 @@ namespace CustomTableOfContents {
                     link.Url = key;
                     link.NavigationPair = BrickPagePair.Create(target.Brick, target.Page);
                     VisualBrick pageBrick = pageBricks.Find(brick => (string)brick.Value == String.Concat("PageBrick_", key));
-                    if(pageBrick != null)
+                    if (pageBrick != null)
                         pageBrick.Text = (target.Page.Index + 1).ToString();
                 }
             }
