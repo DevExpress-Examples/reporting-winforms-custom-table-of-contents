@@ -23,6 +23,18 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.DataAccess.Sql.SelectQuery selectQuery1 = new DevExpress.DataAccess.Sql.SelectQuery();
+            DevExpress.DataAccess.Sql.Column column1 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression1 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Table table1 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.Column column2 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression2 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column3 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression3 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column4 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression4 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoriesReport));
             this.pbPicture = new DevExpress.XtraReports.UI.XRPictureBox();
             this.lbCategoryName = new DevExpress.XtraReports.UI.XRLabel();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
@@ -31,9 +43,7 @@
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.lbPage = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
-            this.nwindDataSet1 = new CustomTableOfContents.nwindDataSet();
-            this.categoriesTableAdapter = new CustomTableOfContents.nwindDataSetTableAdapters.CategoriesTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.nwindDataSet1)).BeginInit();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // pbPicture
@@ -117,14 +127,32 @@
             this.ReportHeader.HeightF = 75F;
             this.ReportHeader.Name = "ReportHeader";
             // 
-            // nwindDataSet1
+            // sqlDataSource1
             // 
-            this.nwindDataSet1.DataSetName = "nwindDataSet";
-            this.nwindDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // categoriesTableAdapter
-            // 
-            this.categoriesTableAdapter.ClearBeforeFill = true;
+            this.sqlDataSource1.ConnectionName = "NorthwindConnection";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            columnExpression1.ColumnName = "CategoryID";
+            table1.Name = "Categories";
+            columnExpression1.Table = table1;
+            column1.Expression = columnExpression1;
+            columnExpression2.ColumnName = "CategoryName";
+            columnExpression2.Table = table1;
+            column2.Expression = columnExpression2;
+            columnExpression3.ColumnName = "Description";
+            columnExpression3.Table = table1;
+            column3.Expression = columnExpression3;
+            columnExpression4.ColumnName = "Picture";
+            columnExpression4.Table = table1;
+            column4.Expression = columnExpression4;
+            selectQuery1.Columns.Add(column1);
+            selectQuery1.Columns.Add(column2);
+            selectQuery1.Columns.Add(column3);
+            selectQuery1.Columns.Add(column4);
+            selectQuery1.Name = "Categories";
+            selectQuery1.Tables.Add(table1);
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            selectQuery1});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // CategoriesReport
             // 
@@ -133,11 +161,11 @@
             this.TopMargin,
             this.BottomMargin,
             this.ReportHeader});
-            this.DataAdapter = this.categoriesTableAdapter;
+            this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
+            this.sqlDataSource1});
             this.DataMember = "Categories";
-            this.DataSource = this.nwindDataSet1;
+            this.DataSource = this.sqlDataSource1;
             this.Version = "23.1";
-            ((System.ComponentModel.ISupportInitialize)(this.nwindDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -151,9 +179,7 @@
         private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
         private DevExpress.XtraReports.UI.DetailBand Detail;
         private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
-        private nwindDataSet nwindDataSet1;
-        private nwindDataSetTableAdapters.CategoriesTableAdapter categoriesTableAdapter;
         private DevExpress.XtraReports.UI.XRLabel lbPage;
-
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
     }
 }
